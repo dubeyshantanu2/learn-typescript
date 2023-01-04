@@ -55,12 +55,21 @@ console.log("calculateTax", calculateTax(100000));
 
 
 //Object in typescript
-let person: {
+
+//Type Allias
+
+type Person = {
     id: number,
     name: string,
-    age: number
-} = {
+    age: number,
+    retire: (date: Date) => void
+}
+// With above method we can use Person type in other places
+let person: Person = {
     id: 121,
     name: "John",
-    age: 25
+    age: 25,
+    retire: (date: Date) => {
+        console.log("Retired on", date);
+    }
 }
