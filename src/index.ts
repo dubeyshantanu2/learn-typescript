@@ -24,3 +24,43 @@ let courses: string[] = ["Typescript", "Javascript", "React"];
 let courses2: Array<string> = ["Typescript", "Javascript", "React"];
 courses.forEach(n=> n.concat("Nodejs"))
 console.log("courses", courses)
+
+//Tuples in typescript
+let tuple: [string, number] = ["Typescript", 123];
+tuple.push("Javascript");
+tuple.push(456);
+console.log("tuple", tuple);
+
+//Enum in typescript
+enum Role { ADMIN = "ADMIN", READ_ONLY = 100, AUTHOR = "AUTHOR" };
+let role: Role = Role.ADMIN;
+console.log("role", role);
+
+//Functions in typescript
+function add(a: number, b: number): number {
+    return a + b;
+}
+console.log("add", add(1, 2));
+
+
+//By adding taxYear = 2033 we are adding default value to the parameter
+//If we dont specify any value for taxYear, it will take the default value
+function calculateTax( income: number, taxYear= 2022): number {
+    if(taxYear > 2022) 
+        return income * 0.3;
+    else
+        return income * 0.2;
+}
+console.log("calculateTax", calculateTax(100000));
+
+
+//Object in typescript
+let person: {
+    id: number,
+    name: string,
+    age: number
+} = {
+    id: 121,
+    name: "John",
+    age: 25
+}
